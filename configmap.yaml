@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+data:
+  LISTEN_PORT: "{{ .Values.nginx.listenPort }}"
+  API_BACKEND: "{{ .Values.nginx.apiBackend }}"
+  TERMINAL_BACKEND: "{{ .Values.nginx.terminalBackend }}"
+  FRONTEND_BACKEND: "{{ .Values.nginx.frontendBackend }}"

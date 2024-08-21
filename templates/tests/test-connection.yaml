@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ .Release.Name }}-test-connection"
+spec:
+  containers:
+  - name: curl
+    image: curlimages/curl
+    command: ['curl']
+    args: 
+      - "http://{{ include "compose-repo-gripo.fullname" . }}:{{ .Values.service.port }}/health"

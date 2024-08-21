@@ -1,0 +1,11 @@
+nginx:
+  image: gripo/gripo-nginx:1.0
+  listenPort: 5055
+  apiBackend: http://gripo-application:5080
+  terminalBackend: http://gripo-terminal:8377
+  frontendBackend: http://gripo-frontend:3000
+service:
+  port: 8080 # yahan apni service ka port define karein
+  type: "NodePort"
+ingress:
+  enabled: false  # ya true, depending on your use case
